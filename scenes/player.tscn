@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://du4ldaspv1rev"]
+[gd_scene load_steps=10 format=3 uid="uid://du4ldaspv1rev"]
 
 [ext_resource type="Texture2D" uid="uid://ckgks267q7rck" path="res://assets/godot_dino.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://ds6jtolptug5" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -59,6 +60,7 @@ animations = [{
 size = Vector2(57, 72)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="AnimTexture" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -69,4 +71,3 @@ autoplay = "run"
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(8.5, 0)
 shape = SubResource("RectangleShape2D_3vyb7")
-disabled = true

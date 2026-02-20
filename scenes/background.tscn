@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjjy4t615f4df"]
+
+[ext_resource type="Texture2D" uid="uid://c5mtinbbifevf" path="res://assets/godot_background.png" id="1_bkp1e"]
+
+[node name="Background" type="CanvasLayer"]
+
+[node name="Texture" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bkp1e")
