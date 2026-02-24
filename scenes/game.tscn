@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgwmisv1p4pn7"]
+[gd_scene load_steps=8 format=3 uid="uid://cgwmisv1p4pn7"]
 
 [ext_resource type="Script" uid="uid://couxaea2a1byn" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cjjy4t615f4df" path="res://scenes/background.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://du4ldaspv1rev" path="res://scenes/player.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c82wni0r23q4x" path="res://scenes/cactus_manager.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dewietfty5kdi" path="res://scenes/game_over.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://bcjac4dp6n0ky" path="res://scenes/start_game.tscn" id="6_p57ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
 size = Vector2(773, 20)
@@ -14,7 +17,9 @@ script = ExtResource("1_uwrxv")
 layer = -1
 
 [node name="Player" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(49, 395)
+position = Vector2(89, 395)
+
+[node name="CactusManager" parent="." instance=ExtResource("4_lbhrr")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(8, 442)
@@ -22,3 +27,16 @@ position = Vector2(8, 442)
 [node name="Collision" type="CollisionShape2D" parent="Floor"]
 position = Vector2(376.5, 0)
 shape = SubResource("RectangleShape2D_lnu2h")
+
+[node name="GameOver" parent="." instance=ExtResource("5_iywne")]
+visible = false
+offset_left = 383.0
+offset_top = 289.0
+offset_right = 383.0
+offset_bottom = 289.0
+
+[node name="StartScene" parent="." instance=ExtResource("6_p57ef")]
+offset_left = 380.0
+offset_top = 279.0
+offset_right = 380.0
+offset_bottom = 279.0

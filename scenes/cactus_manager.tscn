@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c82wni0r23q4x"]
+
+[ext_resource type="Script" uid="uid://bwfhmcfiey0vc" path="res://scripts/cactus_manager.gd" id="1_hnooe"]
+
+[node name="CactusManager" type="Node2D"]
+script = ExtResource("1_hnooe")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
