@@ -10,6 +10,7 @@ var max_time: int = 4
 var turn_on: bool = false
 
 func _ready() -> void:
+	timer.wait_time = randi_range(min_time, max_time)
 	timer.start()
 	GameManager.state_changed.connect(_on_state_changed)
 	

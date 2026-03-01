@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5om04h2w8dqn"]
+
+[ext_resource type="Script" uid="uid://dvwp6j313m6ea" path="res://scripts/bird_manager.gd" id="1_hvbju"]
+
+[node name="BirdManager" type="Node2D"]
+script = ExtResource("1_hvbju")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
