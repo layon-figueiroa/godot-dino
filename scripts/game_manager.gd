@@ -5,6 +5,15 @@ signal state_changed(new_state)
 enum GameState {MENU, PLAYING, GAME_OVER}
 
 var current_state: GameState = GameState.MENU
+var game_time: int = 0
+var game_speed_bird: float = 300.0
+var game_speed_cactus: float = 200.0
+var difficulty_rate: float = 1.0
+
+func _process(delta: float) -> void:
+	if current_state == GameState.PLAYING:
+		game_speed_bird += difficulty_rate * delta
+		game_speed_cactus += difficulty_rate * delta
 
 func change_game_state(new_state: GameState) -> void:
 	if current_state == new_state:
@@ -38,9 +47,15 @@ func enter_game_over() -> void:
 
 func start_game() -> void:
 	change_game_state(GameState.PLAYING)
+	game_time = 0
+	game_speed_bird = 300.0
+	game_speed_cactus = 200.0
 	
 func end_game() -> void:
 	change_game_state(GameState.GAME_OVER)
 
 func go_to_menu() -> void:
 	change_game_state(GameState.MENU)
+	
+func add_time() -> void:
+	game_time += 1

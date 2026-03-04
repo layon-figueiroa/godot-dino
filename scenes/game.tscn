@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgwmisv1p4pn7"]
+[gd_scene load_steps=10 format=3 uid="uid://cgwmisv1p4pn7"]
 
 [ext_resource type="Script" uid="uid://couxaea2a1byn" path="res://scripts/game.gd" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cjjy4t615f4df" path="res://scenes/background.tscn" id="2_yqjtg"]
@@ -7,12 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://dewietfty5kdi" path="res://scenes/game_over.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://5om04h2w8dqn" path="res://scenes/bird_manager.tscn" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bcjac4dp6n0ky" path="res://scenes/start_game.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://rk2o6ixar8w0" path="res://scenes/hud.tscn" id="8_gee14"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnu2h"]
 size = Vector2(773, 20)
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("timer")]
 script = ExtResource("1_uwrxv")
+timer = NodePath("Timer")
 
 [node name="Background" parent="." instance=ExtResource("2_yqjtg")]
 layer = -1
@@ -43,3 +45,11 @@ offset_left = 380.0
 offset_top = 279.0
 offset_right = 380.0
 offset_bottom = 279.0
+
+[node name="HUD" parent="." instance=ExtResource("8_gee14")]
+layer = 100
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

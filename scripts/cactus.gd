@@ -57,7 +57,8 @@ func define_collision_size() -> void:
 		collision_right.position = Vector2(10.5, -6.3)
 
 func move_cactus(delta: float) -> void:
-	position.x -= speed * delta
+	
+	position.x -= GameManager.game_speed_cactus * delta
 	
 func destroy_cactus() -> void:
 	if position.x < -50.0:

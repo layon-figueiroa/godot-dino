@@ -13,7 +13,8 @@ func _process(delta: float) -> void:
 	destroy_bird()
 	
 func move_bird(delta: float) -> void:
-	position.x -= speed * delta
+	
+	position.x -= GameManager.game_speed_bird * delta
 	
 func destroy_bird() -> void:
 	if position.x < -50.0:

@@ -7,6 +7,7 @@ extends CharacterBody2D
 var gravity_force: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jump_force: float = -600.0
+var jump_cut: float = 0.5
 var is_jumping: bool = false
 
 func _physics_process(delta: float) -> void:
@@ -14,6 +15,14 @@ func _physics_process(delta: float) -> void:
 		apply_gravity(delta)
 	else:
 		move_player()
+		
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = jump_force
+			dino_animation.play('jump')
+			
+	if Input.is_action_just_released("jump"):
+		velocity.y *= jump_cut
+		dino_animation.play("jump")
 		
 	move_and_slide()
 	
@@ -23,10 +32,7 @@ func apply_gravity(delta: float) -> void:
 	velocity.y += gravity_force * delta
 	
 func move_player() -> void:
-	if Input.is_action_just_pressed("jump"):
-		velocity.y = jump_force
-		dino_animation.play('jump')
-	elif Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down"):
 		dino_animation.play('lower_run')
 		collision_head.position = Vector2(33.0, -3.0)
 		collision_hand.position = Vector2(20.0, 20.0)

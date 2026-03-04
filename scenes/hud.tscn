@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://rk2o6ixar8w0"]
+
+[ext_resource type="FontFile" uid="uid://in18g60f1dbf" path="res://fonts/dinotype/Dinotype-Demo.ttf" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://bqcy27h02j51k" path="res://scripts/hud.gd" id="1_oo0fn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
+font = ExtResource("1_ahhtf")
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("lbl_score")]
+script = ExtResource("1_oo0fn")
+lbl_score = NodePath("Control/MarginContainer/LblScore")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+
+[node name="LblScore" type="Label" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+label_settings = SubResource("LabelSettings_oo0fn")
+horizontal_alignment = 1
+vertical_alignment = 1

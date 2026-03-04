@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dewietfty5kdi"]
+[gd_scene load_steps=6 format=3 uid="uid://dewietfty5kdi"]
 
 [ext_resource type="Script" uid="uid://bqa851brdpvgk" path="res://scripts/game_over.gd" id="1_xeevv"]
+[ext_resource type="FontFile" uid="uid://in18g60f1dbf" path="res://fonts/dinotype/Dinotype-Demo.ttf" id="2_wqhvx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0nqlu"]
-font_size = 20
+font = ExtResource("2_wqhvx")
+font_size = 30
 font_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
 shadow_size = 6
 
 [sub_resource type="LabelSettings" id="LabelSettings_xeevv"]
-font_size = 12
+font = ExtResource("2_wqhvx")
 font_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nqlu"]
@@ -20,7 +22,7 @@ corner_radius_bottom_left = 8
 expand_margin_top = 3.0
 expand_margin_bottom = 3.0
 
-[node name="GameOver" type="Control"]
+[node name="GameOver" type="Control" node_paths=PackedStringArray("score_label")]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -29,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xeevv")
+score_label = NodePath("V_ContainerGameOver/LblScore")
 
 [node name="V_ContainerGameOver" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -54,7 +57,6 @@ vertical_alignment = 1
 
 [node name="LblScore" type="Label" parent="V_ContainerGameOver"]
 layout_mode = 2
-text = "SCORE: 100"
 label_settings = SubResource("LabelSettings_xeevv")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -62,6 +64,7 @@ vertical_alignment = 1
 [node name="BtnRetry" type="Button" parent="V_ContainerGameOver"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_wqhvx")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_0nqlu")
 text = "Tentar Novamente"
@@ -69,6 +72,7 @@ text = "Tentar Novamente"
 [node name="BtnQuit" type="Button" parent="V_ContainerGameOver"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_wqhvx")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_0nqlu")
 text = "Sair"
