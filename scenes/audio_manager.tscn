@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmgdoigixedxf"]
+
+[ext_resource type="Script" uid="uid://jdfrcljk1gps" path="res://scripts/audio_manager.gd" id="1_liach"]
+[ext_resource type="PackedScene" uid="uid://5o3kjxythx6s" path="res://scenes/audios.tscn" id="2_3asnw"]
+
+[node name="AudioManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_liach")
+
+[node name="Audios" parent="." instance=ExtResource("2_3asnw")]

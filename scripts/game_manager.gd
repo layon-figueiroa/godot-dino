@@ -39,8 +39,11 @@ func enter_playing() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	current_state = GameState.PLAYING
+	AudioManager.play_game_music()
 	
 func enter_game_over() -> void:
+	AudioManager.pause_game_music()
+	AudioManager.play_game_over()
 	get_tree().paused = true
 	
 ###################################

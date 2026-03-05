@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://5o3kjxythx6s"]
+
+[ext_resource type="AudioStream" uid="uid://dd2fob0rqk1x2" path="res://audios/jump_square.wav" id="1_xc4lr"]
+[ext_resource type="AudioStream" uid="uid://bw6pi33bmh2tt" path="res://audios/brass_negative_long.wav" id="2_4c6rg"]
+[ext_resource type="AudioStream" uid="uid://yfrscrfu73o3" path="res://audios/PitcherPerfectTheme.wav" id="3_skc8d"]
+[ext_resource type="AudioStream" uid="uid://bpkbkvv05yl8m" path="res://audios/snap.wav" id="4_wy5n0"]
+
+[node name="Audios" type="Node"]
+
+[node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_xc4lr")
+
+[node name="AudioGameOver" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4c6rg")
+
+[node name="AudioGameMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_skc8d")
+
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_wy5n0")
