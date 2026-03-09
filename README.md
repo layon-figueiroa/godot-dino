@@ -5,6 +5,8 @@
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+![Godot Dino Gameplay](imagens/game.gif)
+
 **Godot Dino** é um clone do clássico **jogo do dinossauro do Google Chrome**, desenvolvido com **Godot Engine**.  
 O objetivo do jogo é sobreviver o máximo possível desviando dos obstáculos que aparecem no caminho.
 
