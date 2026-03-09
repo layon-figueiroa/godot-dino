@@ -45,6 +45,14 @@ Se o jogador **colidir com qualquer obstáculo**, o jogo termina (**Game Over**)
 
 ---
 
+# 📸 Screenshots
+
+<img src="imagens/img1.png" width="500"><br><br>
+<img src="imagens/img2.png" width="500"><br><br>
+<img src="imagens/img3.png" width="500">
+
+---
+
 # 📦 Como Rodar o Projeto
 
 Clone o repositório:
