@@ -26,3 +26,7 @@ func _on_start_entered() -> void:
 	
 func _on_quit_entered() -> void:
 	AudioManager.play_button_audio()
+
+
+func _on_btn_quit_pressed() -> void:
+	get_tree().quit()
